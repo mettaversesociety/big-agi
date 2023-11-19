@@ -3,11 +3,10 @@ import { shallow } from 'zustand/shallow';
 
 import { Box, Container } from '@mui/joy';
 
-import { ModelsModal } from '../../apps/models-modal/ModelsModal';
-import { SettingsModal } from '../../apps/settings-modal/SettingsModal';
+import { ModelsModal } from '~/common/views/models-modal/ModelsModal';
+import { SettingsModal } from '~/common/views/settings-modal/SettingsModal';
 
 import { isPwa } from '~/common/util/pwaUtils';
-import { useAppStateStore } from '~/common/state/store-appstate';
 import { useUIPreferencesStore } from '~/common/state/store-ui';
 
 import { AppBar } from './AppBar';
@@ -20,9 +19,6 @@ export function AppLayout(props: {
 }) {
   // external state
   const { centerMode } = useUIPreferencesStore(state => ({ centerMode: isPwa() ? 'full' : state.centerMode }), shallow);
-
-  // usage counter, for progressive disclosure of features
-  useAppStateStore(state => state.usageCount);
 
   return (
     // Global NoSSR wrapper: the overall Container could have hydration issues when using localStorage and non-default maxWidth

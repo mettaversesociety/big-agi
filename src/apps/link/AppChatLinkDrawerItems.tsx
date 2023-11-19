@@ -9,7 +9,7 @@ import { useChatLinkItems } from '../chat/trade/store-sharing';
 import { Brand } from '~/common/app.config';
 import { Link } from '~/common/components/Link';
 import { closeLayoutDrawer } from '~/common/layout/store-applayout';
-import { getChatLinkRelativePath, getHomeLink } from '~/common/app.routes';
+import { getChatLinkRelativePath, getIndexLink } from '~/common/app.routes';
 
 
 /**
@@ -28,7 +28,7 @@ export function AppChatLinkDrawerItems() {
 
     <MenuItem
       onClick={closeLayoutDrawer}
-      component={Link} href={getHomeLink()} noLinkStyle
+      component={Link} href={getIndexLink()} noLinkStyle
     >
       <ListItemDecorator><ArrowBackIcon /></ListItemDecorator>
       {Brand.Title.Base}

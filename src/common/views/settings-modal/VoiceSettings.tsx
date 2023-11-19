@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { FormControl, Radio, RadioGroup } from '@mui/joy';
 
-import { ChatAutoSpeakType, useChatAutoAI } from '../chat/store-app-chat';
+import { ChatAutoSpeakType, useChatAutoAI } from '../../../apps/chat/store-app-chat';
 
 import { useElevenLabsVoices } from '~/modules/elevenlabs/useElevenLabsVoiceDropdown';
 
